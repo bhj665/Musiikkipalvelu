@@ -16,9 +16,4 @@ List<Albumi> albumit = new ArrayList<Albumi>();
 model.addAttribute("albumit", albumit);
 return "Ostamusiikkia";
 }
-@PostMapping("/lisaaalbumikirjastoon")
-public String lisaaAlbumiKirjastoon(@ModelAttribute Albumi albumi, Model model) {
-model.addAttribute("albumi", albumi);
-return "Kirjasto";
-}
 }

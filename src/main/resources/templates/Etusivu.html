@@ -20,6 +20,22 @@
 </table>
 <h1>ETUSIVU</h1>
 <h1>Suosittelemme</h1>
-<h1>Viimeksi kuuntelemasi kappaleet</h1>
+<tr th:each="kappale : ${suositukset}">
+<p th:text="${kappale.id}"></p>
+<p th:text="${kappale.nimi}"></p>
+<p th:text="${kappale.vuosi}"></p>
+<p th:text="${kappale.kesto}"></p>
+<p th:text="${kappale.artisti}"></p>
+<p th:text="${kappale.albumi}"></p>
+</tr>
+<h1>Viimeksi eniten kuuntelemasi kappaleet</h1>
+<tr th:each="kappale : ${viimeksikuunnellut}">
+<p th:text="${kappale.id}"></p>
+<p th:text="${kappale.nimi}"></p>
+<p th:text="${kappale.vuosi}"></p>
+<p th:text="${kappale.kesto}"></p>
+<p th:text="${kappale.artisti}"></p>
+<p th:text="${kappale.albumi}"></p>
+</tr>
 </body>
 </html>
