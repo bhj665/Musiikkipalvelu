@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Osta musiikkia</title>
+</head>
+<body>
+<table>
+<tr>
+<td>Saldo:</td>
+<td id="saldo">0</td>
+<td>€</td>
+</tr>
+</table>
+<table>
+<tr>
+<td><a href="Etusivu.html">Etusivu</a></td>
+<td><a href="Ostamusiikkia.html">Kauppa</a></td>
+<td><a href="Kirjasto.html">Kirjasto</a></td>
+</tr>
+</table>
+<h1>OSTA MUSIIKKIA</h1>
+<p>Hae kappaletta, albumia tai artistia: <input type="text" id ="arvo" /> <button onclick="haku()">Hae</button></p>
+<h1>Kappaleita</h1>
+<tr th:each="kappale : ${kappaleet}">
+<p th:text="${kappale.id}" id="kappaleid"></p>
+<p th:text="${kappale.nimi}" id="kappalenimi"></p>
+<p th:text="${kappale.vuosi}" id="kappalevuosi"></p>
+<p th:text="${kappale.kesto}" id="kappalekesto"></p>
+<p th:text="${kappale.artisti}" id="kappaleartisti"></p>
+<p th:text="${kappale.albumi}" id="kappalealbumi"></p>
+<a href="Vahvistus.html" id="kappaleosto" onclick="vahvistaKappaleenOsto()">Osta kappale (0,99 €)</a>
+</tr>
+<h1>Albumeita</h1>
+<tr th:each="albumi : ${albumit}">
+<p th:text="${albumi.tuotekoodi}" id="albumituotekoodi"></p>
+<p th:text="${albumi.albuminnimi}" id="albumialbuminnimi"></p>
+<p th:text="${albumi.vuosi}" id="albumivuosi"></p>
+<p th:text="${albumi.kesto}" id="albumikesto"></p>
+<p th:text="${albumi.hinta}" id="albumihinta"></p>
+<p th:text="${albumi.artisti}" id="albumiartisti"></p>
+<a href="Vahvistus.html" id="albumiosto" onclick="vahvistaAlbuminOsto()">Osta albumi</a>
+</tr>
+</body>
+</html>
